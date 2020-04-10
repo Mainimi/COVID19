@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
+          charset="UTF-8">
+    <title>COVID 19 Tobias Tkaczek</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+<header>
+    <ul>
+        <li><h1>COVID-19</h1></li>
+    </ul>
+</header>
+
+<section>
+
+    <form method="post" name="formulario" >
+        <p class="datosACompletar">Parametros</p>
+        <p>Mi poblacion es: <input type="number" name="poblacion" value="37590000"></p>
+        <p>Duracion del virus en cuerpo: <input type="number" name="diasVirus" value="17"></p>
+        <p>Tasa de infeccion: <input type="number" name="tasaInfreccion" value="2"></p>
+        <p>Probabilidad de recuperacion: (%)<input type="number" name="probRecuperacion" value="97"></p>
+        <p>Probabilidad de muerte: (%)<input type="number" name="probMuerte" value="3"></p>
+        <p>Probabilidad de contagio: (%)<input type="number" name="probContagio" value="10"></p>
+        <p class="datosACompletar">Valores iniciales</p>
+        <p>
+            <input type="number" name="susceptiblesIniciales" placeholder="Susceptible">
+            <input type="number" name="infectadosIniciales" placeholder="Infectados">
+            <input type="number" name="recuperadosIniciales" placeholder="Recuperados">
+            <input type="number" name="fallecidosIniciales" placeholder="Fallecidos">
+            <p>Se calcularan los valores para el dia: <input type="number" name="enDias"></p>
+        </p>
+        
+        <p>
+            <button>
+                Confirmar valores
+            </button>
+            
+        </p>
+        <p class="datosParaLeer">Valores totales al dia de la fecha seleccionada: </p>
+        <input type="number" name="resultSusceptiblesTotales" disabled placeholder="Susceptible">
+        <input type="number" name="resultInfectadosTotales" disabled placeholder="Infectados">
+        <input type="number" name="resultRecuperadosTotales" disabled placeholder="Recuperados">
+        <input type="number" name="resultFallecidosTotales" disabled placeholder="Fallecidos">
+        <p class="datosParaLeer">Ese dia se sumaron: </p>
+        <input type="number" name="resultContagiadosHoy"  disabled placeholder="Contagios">
+        <input type="number" name="resultRecuperadosHoy" disabled placeholder="Recuperados">
+        <input type="number" name="resultFallecidosHoy" disabled placeholder="Fallecidos">
+        <p class="datosParaLeer">Valores historicos: </p>
+        <input type="number" name="resultContagiadosHist"  disabled placeholder="Contagios Historicos">
+        <input type="number" name="resultRecuperadosHist" disabled placeholder="Recuperados Historicos">
+        <input type="number" name="resultFallecidosHist" disabled placeholder="Fallecidos Historicos">
+        <p class="datosParaLeer">Valores picos: </p>
+        <input type="number" name="resultContagiadosMax"  disabled placeholder="Contagiados totales">
+        <input type="number" name="resultRecuperadosXDiaMax" disabled placeholder="Recuperados/dia">
+        <input type="number" name="resultContagiadosXDiaMax" disabled placeholder="Contagiados/dia">
+        <input type="number" name="resultFallecidosXDiaMax" disabled placeholder="Fallecidos/dia">
+    </form>
+
+ 
+
+    
+</section>
+
+
+<script src="js\functions.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
