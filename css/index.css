@@ -105,4 +105,6 @@ button:hover {
     color: #20D7C0;
 }
 
-
+.info {
+    text-align: left;
+  }

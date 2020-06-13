@@ -24,109 +24,37 @@
 
 <header>
     <ul>
-        <li><h1>COVID-19</h1></li>
+        <li><h1>COVID-19 Modelo depredador-presa de LotkaVolterra</h1></li>
     </ul>
 </header>
 
 <section>
 
     <form method="post" name="formulario" >
-        <p class="datosACompletar">Parametros</p>
-        <p>Mi poblacion es: <input type="number" name="poblacion" value="37590000"></p>
-        <p>Duracion del virus en cuerpo: <input type="number" name="diasVirus" value="17"></p>
-        <p>Tasa de infeccion: <input type="number" name="tasaInfreccion" value="2"></p>
-        <p>Probabilidad de recuperacion: (%)<input type="number" name="probRecuperacion" value="97"></p>
-        <p>Probabilidad de muerte: (%)<input type="number" name="probMuerte" value="3"></p>
-        <p>Probabilidad de contagio: (%)<input type="number" name="probContagio" value="10"></p>
-        <p class="datosACompletar">Valores iniciales</p>
-        <p>
-            <input type="number" name="susceptiblesIniciales" placeholder="Susceptible">
-            <input type="number" name="infectadosIniciales" placeholder="Infectados">
-            <input type="number" name="recuperadosIniciales" placeholder="Recuperados">
-            <input type="number" name="fallecidosIniciales" placeholder="Fallecidos">
-            <p>Se calcularan los valores para el dia: <input type="number" name="enDias"></p>
-        </p>
+        <p class="datosACompletar">Valoraciones iniciales</p>
+            <p class="info">
+                Para explicar la utilización del modelo "depredador-presa"a este caso en concreto de coronavirus comenzaremos diciendo que se considera a los infectados como los depredadores donde las presas, en este caso considerados como las personas suceptibles, deberán protegerse de ser contagiadas, suponiendo la analogía donde los suceptibles solos en sus casas aislados de las presas tendría naturalmente una curva exponencial creciente ya que estos podrían vivir en paz evitando así cualquier contagia y no tendrían problemas de recursos idealmente y los contagiados aislados tendrían una curva naturalmente exponencialmente decreciente ya que al no poder contagiar estos mismo desaparecerían tanto por la curación de los mismos o su inevitable muerte 
+            </p>
+            <br>
+            <p class="info">En mi opinión desde un principio, aun cuando en base a las deducciones que se tienen al aislar ambas poblaciones sean adecuadas, no creo conveniente hacer uso de este modelo ya que presenta muchas incoherencias,de entrada somos una misma especie la cual se ve obligada a interactuar con ella misma,luego principalmente ya que este modelo, a demás de ideal, es oscilatoria lo cual conlleva a una nula posibilidad de una cura total de la población lo cual sabes que no es así y también por su misma naturaleza oscilatoria se interpreta que las personas pueden ser re-infectadas infinitamente y debido a que aunque sea pequeña la tasa de mortalidad del virus a no ser por una poco probable alta taza de reproducción de la humanidad llevaría a un inevitable colapse de la sociedad inminente mente </p>
+            <br>
+            <p class="info">PD: puedo estar flasheandola una banda</p>
         
-        <p>
-            <button>
-                Confirmar valores
-            </button>
+        <p class="datosACompletar">Desarrollo</p>
+            <p class="info">Partiendo de las EDO de predador-presa </p>
+            <img src="img\1.png" >
+        
+            <p class="info"> Vamos a definir nuestros coeficientes, comenzando por "a" la cual definimos como la tasa de nacimiento de los susceptibles, de un censo en 2018 que nos dice que una mujer promedio en Argentina tiene  2,26 hijos y su vida promedio es de 80 años nos quedaremos con una tasa promedio de 0.028 y en cuento a "d" siendo la tasa de exito de caza que afecta a los depredadores, la cual interpretamos de crecimiento, se considera tomando un promedio desde el primer infectado en Argentina siendo este el 3 de Marzo con un total hasta la fecha de 13 de Junio con un total de infectados de casi 29 mil personas siendo un lapso de tiempo de 92 días, 0.246575 años, donde nos queda una tasa de 117647 siendo esta una tasa de infeccion promedio anual </p>
+            <br>
+            <p class="info">En cuento a los coeficientes "b" y "c", definidos como la tasa de éxito de caza de depredador que afecta a la presa y la tasa de crecimiento de los depredadores, creo convenientes que entre ambos deben formar la unidad, porque? básicamente considero que al ser la misma especie lo que genera un éxito para una parte de la población genera un descontento en la otra parte, en otras palabras si tenemos una baja tasa de efectividad de los contagiados sobre los susceptibles lo cual se puede dar por aislamiento o cualquier otra cosa entonces la población susceptible se vera beneficiada generando un crecimiento de la misma y viceversa </p>
+            <br>
+            <p class="info">En base a esta deducción podemos decir entonces que 'b', tasa de éxito de la caza que afecta a la presa, la vamos a interpretar como la tasa de mortalidad del virus, dado que de estos 29k infectados solamente murieron unos  785 nos da una tasa de 0,027, en este caso de "c" es decir tasa de vida, que hacer decrecer a los mismo, de depredadores la consideramos como opuesta en su unidad representando la tasa de recuperación quedándonos de  0.9729</p>
+            <p class="datosACompletar">Resultado y conclusiones</p>
+            <br>
+            <img src="img\ezgif-1-9e3595f7e235.gif" alt="">
+            <p class="info">El modelo esta mal planteado donde se ve presente una mala deducción de los coeficientes, como podemos ver en la simulación vemos un bombaso de crecimiento por parte de los depredadores, es decir infectados, por su alta tasa de contagio lo cual conlleva a un nodo inestable porque aun cuando la tasa de mortalidad es tan baja la tasa de crecimiento de los mismos se ve opacada por los depredadores, quizás fue una mala decisión tomar  dicha tasa de esa manera cuando la tasa que hace crecer a los infectados es el contagio y no el nacimiento de los mismo enfermos lo cual tampoco tiene sentido, debido al estudio del modelo mas a fondo concluyo que aunque este equivocado el resultado planteado podría llegar a modelar un escenario real un modelo de depredador presa siendo pulido o mejor dicho un poco mas aplicado en casos de COVID-19 pero con un pero muy importante, creo que durante un limitado lapso de tiempo ya que el modelo es oscilatorio pero no es lo que vemos que ocurre en la realidad</p>
             
-        </p>
-        <p class="datosParaLeer">Valores totales al dia de la fecha seleccionada: </p>
-        <input type="number" name="resultSusceptiblesTotales" disabled placeholder="Susceptible">
-        <input type="number" name="resultInfectadosTotales" disabled placeholder="Infectados">
-        <input type="number" name="resultRecuperadosTotales" disabled placeholder="Recuperados">
-        <input type="number" name="resultFallecidosTotales" disabled placeholder="Fallecidos">
-        <p class="datosParaLeer">Ese dia se sumaron: </p>
-        <input type="number" name="resultContagiadosHoy"  disabled placeholder="Contagios">
-        <input type="number" name="resultRecuperadosHoy" disabled placeholder="Recuperados">
-        <input type="number" name="resultFallecidosHoy" disabled placeholder="Fallecidos">
-        <p class="datosParaLeer">Valores historicos: </p>
-        <input type="number" name="resultContagiadosHist"  disabled placeholder="Contagios Historicos">
-        <input type="number" name="resultRecuperadosHist" disabled placeholder="Recuperados Historicos">
-        <input type="number" name="resultFallecidosHist" disabled placeholder="Fallecidos Historicos">
-        <p class="datosParaLeer">Valores picos: </p>
-        <input type="number" name="resultContagiadosMax"  disabled placeholder="Contagiados totales">
-        <input type="number" name="resultRecuperadosXDiaMax" disabled placeholder="Recuperados/dia">
-        <input type="number" name="resultContagiadosXDiaMax" disabled placeholder="Contagiados/dia">
-        <input type="number" name="resultFallecidosXDiaMax" disabled placeholder="Fallecidos/dia">
-        <div id="wrapper">
-            <div id="options">
-                <table id="model-parameters">
-                    <tr><td id="prey-heading" class="heading" colspan="3">Prey</td></tr>
-                    <tr>
-                        <td colspan="2">Initial Population:</td>
-                        <td><input type="text" id="prey-initial-population" class="param" value="500"/></td>
-                    </tr>
-                    <tr>
-                        <td>Growth rate:</td>
-                        <td><div id="prey-growth-slider" class="slider"></div></td>
-                        <td><input type="text" id="prey-growth-rate" class="param"/></td>
-                    </tr>
-                    <tr>
-                        <td>Death rate:</td>
-                        <td><div id="prey-death-slider" class="slider"></div></td>
-                        <td><input type="text" id="prey-death-rate" class="param"/></td>
-                    </tr>
-    
-                    <tr><td id="predator-heading" class="heading" colspan="3">Predator</td></tr>
-                    <tr>
-                        <td colspan="2">Initial Population:</td>
-                        <td><input type="text" id="predator-initial-population" class="param" value="20"/></td>
-                    </tr>
-                    <tr>
-                        <td>Growth rate:</td>
-                        <td><div id="predator-growth-slider" class="slider"></div></td>
-                        <td><input type="text" id="predator-growth-rate" class="param"/></td>
-                    </tr>
-                    <tr>
-                        <td>Death rate:</td>
-                        <td><div id="predator-death-slider" class="slider"></div></td>
-                        <td><input type="text" id="predator-death-rate" class="param"/></td>
-                    </tr>
-    
-                    <tr><td id="advanced-heading" class="heading" colspan="3">Simulation Options</td></tr>
-                    <tr>
-                        <td colspan="2">Generations:</td>
-                        <td><input type="text" id="generations" class="param" value="1000"/></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">Time Step:</td>
-                        <td><input type="text" id="time-step" class="param" value=".01"/></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" id="compare-to-td"><input type="checkbox" id="compare-to-checkbox" value="compare" />Compare to previous?</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3"><input type="button" id="simulate-button" value="Simulate" /></td>
-                    </tr>
-    
-                </table>
-            </div>
-            <div id="graph">
-                <div id="canvas-div" width="560" height="450">
-        </div>
+        
     </form>
 
  
